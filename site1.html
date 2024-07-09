@@ -3,8 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Daniel Shkembi's Website</title>
     <link rel="stylesheet" href="site1.css">
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Smooth transitions */
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        header, section, footer {
+            transition: opacity 1s;
+        }
+
+        /* Background images */
+        #home {
+            background-image: url('home-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #about {
+            background-image: url('about-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #projects {
+            background-image: url('projects-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #resume {
+            background-image: url('resume-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #contact {
+            background-image: url('contact-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        /* Navigation styling */
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            min-height: 100vh;
+            opacity: 0;
+        }
+
+        section:target {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,6 +121,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -20,21 +129,29 @@
     <section id="home">
         <h1>Welcome to My Personal Website</h1>
         <p>Discover more about me and my work.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here.</p>
+        <p>My name is Daniel Shkembi. I am a senior at Purdue University, pursuing a degree in Computer Engineering with a focus on Software Engineering. I am passionate about data science, machine learning, software development, and product management.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
     </section>
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project">
             <h3>Project Title 1</h3>
-            <p>Project description goes here.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
         </div>
         <div class="project">
             <h3>Project Title 2</h3>
-            <p>Project description goes here.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
         </div>
+    </section>
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>You can view my resume by clicking the link below:</p>
+        <a href="resume.pdf" target="_blank">View My Resume</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
     </section>
     <section id="contact">
         <h2>Contact Me</h2>
@@ -47,9 +164,10 @@
             <textarea id="message" name="message" required></textarea>
             <button type="submit">Send</button>
         </form>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
     </section>
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Daniel Shkembi. All rights reserved.</p>
     </footer>
     <script src="site1.js"></script>
 </body>
