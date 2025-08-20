@@ -1,174 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Shkembi's Website</title>
-    <link rel="stylesheet" href="site1.css">
-    <style>
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Smooth transitions */
-        body {
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        header, section, footer {
-            transition: opacity 1s;
-        }
-
-        /* Background images */
-        #home {
-            background-image: url('home-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        #about {
-            background-image: url('about-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        #projects {
-            background-image: url('projects-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        #resume {
-            background-image: url('resume-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        #contact {
-            background-image: url('contact-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        /* Navigation styling */
-        header {
-            position: fixed;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            min-height: 100vh;
-            opacity: 0;
-        }
-
-        section:target {
-            opacity: 1;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Shkembi — Portfolio</title>
+  <meta name="description" content="Projects, experience, skills, leadership, and contact for Daniel Shkembi." />
+  <link rel="stylesheet" href="site1.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Home">DS</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-content">
+        <p class="eyebrow">Software • Data • Product</p>
+        <h1>Hi, I’m <span class="hilite">Daniel Shkembi</span>.</h1>
+        <p class="lead">
+          I build fast, reliable software and data systems—then tune them until they sing. I care about clean interfaces,
+          resilient infrastructure, and shipping products that people actually enjoy using.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#projects">Explore Projects</a>
+          <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- Expanded stats -->
+      <aside class="hero-card" aria-label="Key stats">
+        <div class="stat">
+          <span class="stat-num">15M+</span>
+          <span class="stat-label">plays analyzed</span>
+          <p class="stat-desc">
+            Large-scale data ingestion taught me to design schemas, pick the right indexes, and
+            cache where it truly matters—so complex filters feel instant.
+          </p>
+        </div>
+        <div class="stat">
+          <span class="stat-num">&lt;200ms</span>
+          <span class="stat-label">median API latency</span>
+          <p class="stat-desc">
+            Latency isn’t magic: it’s JSONB for flexible queries, tight SQL, and smart memoization so the UI stays crisp.
+          </p>
+        </div>
+        <div class="stat">
+          <span class="stat-num">60%</span>
+          <span class="stat-label">faster dashboards</span>
+          <p class="stat-desc">
+            Shaving seconds off load time came from Redis, hot-path profiling, and making expensive work happen once.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>
+        I’m a Computer Engineering grad (Software) from Purdue and an Evans Scholar. I gravitate toward projects where
+        data and product meet: building APIs that won’t blink under load, visualizations that make insights feel obvious,
+        and workflows that balance speed with trust.
+      </p>
+      <p>
+        I like simple contracts, modular code, and giving future-me (or a teammate) excellent breadcrumbs:
+        tests that fail loudly, docs that age gracefully, and deploys that are boring by design.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+
+      <div class="grid">
+        <!-- Playbook Insights -->
+        <article class="card card-hover">
+          <div class="card-kicker">Full-Stack • Analytics • Performance</div>
+          <h3>Playbook Insights — NFL Analytics Platform</h3>
+          <p>
+            Playbook Insights distills over 15 million plays into interactive, filterable views that make strategy feel
+            intuitive. I designed a type-safe backend in Express/TypeScript with 40+ endpoints and a React/Vite/Tailwind UI
+            that remains smooth under heavy query loads. JSONB enabled flexible filtering without cartwheeling through JOINs,
+            while Redis reduced repeat work and kept median latency under 200 ms.
+          </p>
+          <p>
+            The interesting problems were all about flow: how to debounce and memoize client work so filters feel instant,
+            how to batch requests without starving the UI, and how to surface the “right” defaults so casual users get value
+            without configuration. CI/CD (GitHub Actions → Docker → AWS ECS/RDS/Terraform) turned deploys into a formality.
+          </p>
+          <ul class="bullets">
+            <li>40+ REST endpoints; parameterized SQL with JSONB for flexible, safe filters</li>
+            <li>95%+ route coverage via Jest and reusable validators</li>
+            <li>~60% faster dashboards from caching, indexing, and selector memoization</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://github.com/DanShkembi/Playbook-Insights" target="_blank" rel="noopener">GitHub</a>
+            <a href="#contact" class="chip">Ask me about the schema</a>
+          </div>
+        </article>
+
+        <!-- SpareTee (Coming soon) -->
+        <article class="card card-hover">
+          <div class="card-kicker">Startup • Bookings • Payments</div>
+          <h3>SpareTee — Discounted Last-Minute Tee Times <span class="coming">Coming soon</span></h3>
+          <p>
+            SpareTee is a startup I’ve been building to help golfers grab last-minute discounted tee times in Chicagoland.
+            It focuses on a fast guest checkout for speed, with accounts for loyalty later. The backend centers on Django
+            with Stripe for payments and Redis + Celery for availability polling and cache invalidation.
+          </p>
+          <p class="muted">Links hidden while I wrap up the MVP and integrations. Happy to walk through the architecture.</p>
+        </article>
+
+        <!-- ARR Pipeline (Keeper) -->
+        <article class="card card-hover">
+          <div class="card-kicker">Data • Reliability • Reproducibility</div>
+          <h3>ARR Analytics Pipeline — Keeper Security</h3>
+          <p>
+            I rebuilt a spreadsheet/Tableau-based ARR calculation into a reproducible Python + SQL pipeline with monthly
+            granularity. The goal wasn’t only speed—it was trust. I made each transformation small and testable, documented
+            assumptions inline, and produced outputs that analysts could audit and regenerate consistently.
+          </p>
+          <ul class="bullets">
+            <li>Contract windowing: allocate revenue only within <em>contract_start</em> → <em>contract_end</em> months</li>
+            <li>Monthly scaffold: cross-join subscriptions with a canonical “Month Start” calendar</li>
+            <li>ARR formula (simplified): <code>(net_revenue - refund) / term_length_months</code> per active month</li>
+            <li>Pivot to wide matrices for cohort views; lag/lead checks to detect month-level anomalies</li>
+          </ul>
+
+          <details class="details">
+            <summary>Deep dive: approach</summary>
+            <p>
+              The pipeline reads raw subscription CSVs, normalizes dates, computes a term length in months, and derives ARR as
+              <code>(net_revenue - refund) / term_length</code>. It builds a monthly calendar (“Month Start”), omits excluded months,
+              and cross-joins the calendar to subscriptions to generate a full grid. ARR is assigned only when the calendar month
+              falls inside the contract window.
+            </p>
+            <p>
+              After grouping by subscription and month, it pivots to a wide format for reporting. To catch spiky artifacts,
+              the code aligns each row with previous/next month (lag/lead) and conditionally smooths anomalies so downstream
+              dashboards reflect true patterns—not data hiccups.
+            </p>
+            <p class="lesson"><strong>What I learned:</strong> ARR work lives at the intersection of math and governance.
+              Tests, lineage, and clear contracts matter as much as raw optimization.</p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+
+      <ol class="timeline" aria-label="Professional Experience Timeline">
+        <li class="timeline-item">
+          <div class="dot"></div>
+          <div class="time">Jun 2024 — Dec 2024</div>
+          <div class="content">
+            <h3>Data &amp; Software Engineer Intern — Keeper Security</h3>
+            <p>
+              Replatformed ARR logic from Tableau/Sheets into Python + SQL. I teased apart the business logic, added
+              unit tests at risky seams, and sped up execution with better queries and batching. The bigger outcome:
+              numbers became understandable and repeatable, which made them useful.
+            </p>
+            <ul class="bullets">
+              <li>Refactored transformation steps into testable units with clear contracts</li>
+              <li>Significant runtime reductions from query tuning, vectorized ops, and pruning</li>
+              <li>Version control + Atlassian docs → shared knowledge and easier onboarding</li>
             </ul>
-        </nav>
-    </header>
-    <section id="home">
-        <h1>Welcome to My Personal Website</h1>
-        <p>Discover more about me and my work.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
+            <p class="lesson"><strong>What I learned:</strong> performance wins are fragile unless you also fix
+              documentation and ownership.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="dot"></div>
+          <div class="time">Mar 2024 — May 2024</div>
+          <div class="content">
+            <h3>QA Software Engineer Intern — WebGM (reqstaq)</h3>
+            <p>
+              Built Selenium/Capybara automation as if it were a product: stable, observable, easy to extend. Coverage
+              went up; regressions went down. Developers had clearer failure signals and could ship with more confidence.
+            </p>
+            <ul class="bullets">
+              <li>UI + service-layer tests with meaningful, human-readable reports</li>
+              <li>Regression-prone paths hardened; fewer late-cycle surprises</li>
+              <li>Faster feedback loops shortened release cycles</li>
+            </ul>
+            <p class="lesson"><strong>What I learned:</strong> the best tests tell you exactly where—and why—things broke.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="dot"></div>
+          <div class="time">May 2023 — Aug 2023</div>
+          <div class="content">
+            <h3>Data Science &amp; Analytics Intern — Gallagher</h3>
+            <p>
+              Cleaned and modeled large insurance datasets, then built dashboards that mapped predictions to actions.
+              Reducing low-value manual reviews freed analysts to tackle unusual edge cases where judgment matters most.
+            </p>
+            <ul class="bullets">
+              <li>Feature pipelines and validation to keep models honest</li>
+              <li>Predictive scoring to prioritize review queues</li>
+              <li>Power BI dashboards designed for analyst workflows</li>
+            </ul>
+            <p class="lesson"><strong>What I learned:</strong> a useful model makes the next step obvious, not just accurate.</p>
+          </div>
+        </li>
+      </ol>
     </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>My name is Daniel Shkembi. I am a senior at Purdue University, pursuing a degree in Computer Engineering with a focus on Software Engineering. I am passionate about data science, machine learning, software development, and product management.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
-    </section>
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
+
+    <!-- Skills (ALL from resume) -->
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skills-group">
+          <h3>Languages</h3>
+          <ul class="pill-list">
+            <li>C</li><li>Python</li><li>Selenium</li><li>Capybara</li><li>Ruby</li>
+            <li>RISC-V Assembly</li><li>MATLAB</li><li>HTML</li><li>JavaScript</li>
+            <li>C++</li><li>TypeScript</li>
+          </ul>
         </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
+
+        <div class="skills-group">
+          <h3>Frameworks</h3>
+          <ul class="pill-list">
+            <li>VS Code</li><li>Git</li><li>PyCharm</li><li>Eclipse</li><li>Thonny (Embedded SWE)</li>
+            <li>Jira</li><li>Atlassian</li><li>Power BI</li><li>SQL</li><li>Microsoft Office</li>
+            <li>LaTeX</li><li>Tableau</li><li>LTspice</li><li>Jupyter Notebook</li><li>Fusion 360</li>
+            <li>Data Structures &amp; Algorithms</li><li>PostgreSQL</li><li>AWS</li><li>Flask</li><li>FastAPI</li>
+          </ul>
         </div>
+
+        <div class="skills-group">
+          <h3>Developer Tools</h3>
+          <ul class="pill-list">
+            <li>Git</li><li>Docker</li><li>TravisCI</li><li>Google Cloud Platform (GCP)</li>
+            <li>VS Code</li><li>Visual Studio</li><li>PyCharm</li><li>IntelliJ</li><li>Eclipse</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Libraries</h3>
+          <ul class="pill-list">
+            <li>pandas</li><li>NumPy</li><li>Matplotlib</li><li>scikit-learn</li>
+            <li>PyTorch</li><li>TensorFlow</li><li>Seaborn</li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section id="resume">
-        <h2>Resume</h2>
-        <p>You can view my resume by clicking the link below:</p>
-        <a href="resume.pdf" target="_blank">View My Resume</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
+
+    <!-- Leadership (HEAVILY EXPANDED) -->
+    <section id="leadership" class="section container">
+      <h2>Leadership</h2>
+
+      <!-- Snapshot / KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="num">42</div>
+          <div class="label">Members Led</div>
+          <p class="kpi-desc">Evans Scholars chapter membership; managed operations with a 7-person executive board.</p>
+        </div>
+        <div class="kpi">
+          <div class="num">10</div>
+          <div class="label">Project Teammates</div>
+          <p class="kpi-desc">EPICS DKC cross-functional team across hardware, software, CAD, and materials.</p>
+        </div>
+        <div class="kpi">
+          <div class="num">11</div>
+          <div class="label">New Members Onboarded</div>
+          <p class="kpi-desc">Planned and executed onboarding for incoming house members; improved retention & engagement.</p>
+        </div>
+      </div>
+
+      <div class="leadership-grid">
+        <!-- Evans Scholars -->
+        <article class="role-card">
+          <header class="role-head">
+            <div>
+              <h3>President &amp; Vice President — Purdue Evans Scholars</h3>
+              <p class="tenure">Jan 2023 — Jan 2025</p>
+            </div>
+            <span class="badge">People • Ops • Mentorship</span>
+          </header>
+
+          <p>
+            I led a 42-member chapter with a focus on clarity and cadence—weekly chapter meetings, a 7-person executive board,
+            and steady communication with the Western Golf Association. My north star was predictability: create plans that
+            survived busy weeks, write things down so decisions didn’t get lost, and make it easy for the next person to lead.
+          </p>
+
+          <div class="columns">
+            <div>
+              <h4>Ops Mechanics</h4>
+              <ul class="checklist">
+                <li>Weekly agendas with time-boxed discussions and action owners</li>
+                <li>Exec board syncs for policy updates and house operations</li>
+                <li>Onboarding flow for 11 new members; expectations + mentorship</li>
+                <li>Written recaps for continuity and accountability</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Impact Highlights</h4>
+              <ul class="checklist">
+                <li>Higher meeting participation through clearer asks and prep docs</li>
+                <li>Fewer last-minute scrambles by adopting simple planning rituals</li>
+                <li>Stronger retention by pairing new members with peers early</li>
+                <li>Healthier decision-making: pros/cons captured before votes</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="lesson"><strong>What I learned:</strong> leadership scales when expectations are explicit and
+            documentation is routine. The best meetings are short because the prep was long.</p>
+        </article>
+
+        <!-- EPICS DKC -->
+        <article class="role-card">
+          <header class="role-head">
+            <div>
+              <h3>Product Manager &amp; Design Lead — Purdue EPICS DKC</h3>
+              <p class="tenure">Aug 2024 — May 2025</p>
+            </div>
+            <span class="badge">Product • Hardware/Software • Delivery</span>
+          </header>
+
+          <p>
+            I coordinated a 10-person team building an accessible tempo trainer for the deaf and hard-of-hearing community.
+            We split into two sub-teams (hardware/software, CAD/materials) and ran weekly standups, design reviews, and
+            stakeholder check-ins. My job was to make handoffs clean and to unblock people quickly.
+          </p>
+
+          <div class="columns">
+            <div>
+              <h4>Cadence & Artifacts</h4>
+              <ul class="checklist">
+                <li>Weekly standups with clear outcomes and next steps</li>
+                <li>Design reviews for CAD and electronics before prints/orders</li>
+                <li>Initial Gantt for milestones; updated as risks surfaced</li>
+                <li>Meeting notes and checklists to preserve context</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Cross-Functional Delivery</h4>
+              <ul class="checklist">
+                <li>Fusion 360 CAD iterations; two-piece redesign to reduce leaks</li>
+                <li>Waterproofing tests with O-ring materials; silicone success</li>
+                <li>PlatformIO migration; electronics fit and LED updates</li>
+                <li>Stakeholder presentations and transition docs for future teams</li>
+              </ul>
+            </div>
+          </div>
+
+          <details class="details">
+            <summary>Selected Week-by-Week Highlights</summary>
+            <ul class="checklist">
+              <li><strong>Week 8–9:</strong> finalized inner components in TPU; first waterproof test exposed O-ring limits</li>
+              <li><strong>Week 11:</strong> switched to silicone O-ring; minor leaks patched and retested</li>
+              <li><strong>Week 12:</strong> fit issue uncovered; initiated enclosure adjustments and PCB changes</li>
+              <li><strong>Week 14:</strong> two-piece enclosure refined to prevent recurring leaks</li>
+              <li><strong>Week 15–16:</strong> identified cap-tab wear; reinforced design and prepared transition docs</li>
+            </ul>
+          </details>
+
+          <p class="lesson"><strong>What I learned:</strong> in cross-disciplinary builds, the real product is the
+            handoff—clear interfaces, shared definitions of “done,” and rapid feedback loops.</p>
+        </article>
+      </div>
+
+      <!-- Principles -->
+      <article class="role-card">
+        <header class="role-head">
+          <div><h3>Leadership Principles I Operate By</h3></div>
+          <span class="badge">Calm • Clarity • Cadence</span>
+        </header>
+        <ul class="checklist">
+          <li><strong>Default to clarity:</strong> names on tasks, due dates, and the why behind them.</li>
+          <li><strong>Short loops:</strong> fewer surprises when feedback arrives daily, not monthly.</li>
+          <li><strong>Document decisions:</strong> future teammates shouldn’t have to re-debate settled questions.</li>
+          <li><strong>Design for handoffs:</strong> make it easy for someone else to be excellent.</li>
+        </ul>
+      </article>
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.</p>
+
+    <!-- Resume -->
+    <section id="resume" class="section container">
+      <h2>Resume</h2>
+      <p>Grab the latest copy of my resume below:</p>
+      <p><a class="btn" href="Resume - Daniel Shkembi.pdf" target="_blank" rel="noopener">View Resume (PDF)</a></p>
     </section>
-    <footer>
-        <p>&copy; 2024 Daniel Shkembi. All rights reserved.</p>
-    </footer>
-    <script src="site1.js"></script>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <form id="contact-form" class="contact-form" method="POST" action="">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button class="btn" type="submit">Send</button>
+        <p class="form-note">
+          No backend? This form opens your email client. Want submissions saved? Swap the <code>action</code> for a Formspree endpoint.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Daniel Shkembi</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="mailto:31shkembi@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/daniel-shkembi" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="site1.js"></script>
 </body>
 </html>
